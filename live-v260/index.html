@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="ru">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#14151a">
+<title>Blood Drain — живая демка анимаций</title>
+<link rel="stylesheet" href="style.css">
+<body>
+<main>
+  <header><div><p class="eyebrow">BLOOD DRAIN / ANIMATION PLAYGROUND</p><h1>Движения вживую</h1></div><a href="../recovered-v260/">Кадры и разбор ↗</a></header>
+  <section class="arena" aria-label="Площадка просмотра анимаций">
+    <canvas id="scene" tabindex="0" aria-label="Площадка: стрелки или WASD — ходьба, пробел — уклонение"></canvas>
+    <div class="scene-top"><span id="mode">Свободное управление</span><span id="motion">Загрузка…</span></div>
+    <div id="loading" role="status">Загружаю персонажа…</div>
+    <div class="scene-bottom"><span id="position">Склад · пробная сцена</span><span id="frame">—</span></div>
+  </section>
+  <section class="controls" aria-label="Управление персонажем">
+    <div class="pad" aria-label="Направления движения">
+      <button class="up" data-direction="up" aria-label="Идти в глубину">↑</button>
+      <button class="left" data-direction="left" aria-label="Идти влево">←</button>
+      <span class="pad-center" aria-hidden="true">✦</span>
+      <button class="right" data-direction="right" aria-label="Идти вправо">→</button>
+      <button class="down" data-direction="down" aria-label="Идти ближе">↓</button>
+    </div>
+    <div class="actions"><button id="dodge" class="primary">Уклонение <small>Пробел</small></button><button id="tour">▶ Показать всё</button><button id="pause">Пауза</button></div>
+    <p class="hint">Удерживай стрелки. На компьютере — WASD / стрелки. Пробел — уклонение.</p>
+  </section>
+  <section class="settings" aria-label="Просмотр движений">
+    <label class="choose">Движение<select id="clip"><option value="free">Свободное управление</option></select></label>
+    <label>Скорость<select id="speed"><option value="0.25">0,25×</option><option value="0.5">0,5×</option><option value="1" selected>1×</option><option value="1.5">1,5×</option></select></label>
+    <label>Сцена<select id="background"><option value="warehouse">Склад</option><option value="light">Светлая</option><option value="dark">Тёмная</option></select></label>
+    <button id="flip">Развернуть</button>
+    <button id="reset">В центр</button>
+  </section>
+  <section class="review" aria-label="Статус текущей анимации"><p id="verdict">Подготавливаю анимации.</p><p id="note"></p><div class="timeline"><button id="prev" aria-label="Предыдущий кадр">‹</button><input id="seek" type="range" min="0" max="95" value="0" aria-label="Кадр анимации"><button id="next" aria-label="Следующий кадр">›</button></div></section>
+  <footer>Отдельная площадка просмотра, без боёв. Стойка и ходьба — прежние исходники; уклонение — новый кандидат. Фрагменты и брак доступны для сравнения. Основная игра не изменена.</footer>
+  <noscript>Для демки нужен включённый JavaScript.</noscript>
+</main>
+<script type="module" src="app.js"></script>
+</body></html>
